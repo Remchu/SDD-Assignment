@@ -154,14 +154,14 @@
 
       }
 
-
+      // A function created to append a given input into the spreadsheet
       function appendName() {
         let name = document.getElementById("fname").value;
         addOns.push([name]);
         makeApiCall();
       }
 
-
+      // A function which allows the spreadsheet to be displayed onto the UI
       function listQueueNames() {
         gapi.client.sheets.spreadsheets.values.get({
           spreadsheetId: SPREADSHEET_ID,
@@ -182,6 +182,7 @@
         });
       }
 
+      // Connects the input feature to the spreadsheet; allows te spreadsheet to be updated in the first place
       function makeApiCall() {
 
       var params = {
@@ -195,8 +196,6 @@
 
         resource: {values: existingList.concat(addOns)}
       };
-
-
   
       var request = gapi.client.sheets.spreadsheets.values.update(params);
       request.then(function(response) {
