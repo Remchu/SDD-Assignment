@@ -36,7 +36,7 @@
 
 
 
-
+    <button onclick="Driver()">Test</button>
     
 
     <div class="container">
@@ -147,6 +147,7 @@
         pre.appendChild(textContent);
       }
 
+      //A function which removes the first object in the spreadsheet
       function removeFirstInQueue() {
         existingList.shift();
         existingList.push(['']);
@@ -205,6 +206,11 @@
       });
       addOns = [];
     }
+    function Driver() {
+        addOns.push(['Test1']);
+        makeApiCall();
+        console.log('Yes. It works. Check the spreadsheet or refresh. It should show on the queue')
+      }
     </script>
    
 
