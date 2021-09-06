@@ -26,20 +26,26 @@
       <button id="signout_button" style="display: none;">Sign Out</button>
       <form>
         <label for="fname">First name:</label><br>
-        <input style="display: none;" type="text" id="fname" name="fname"><br>
-        <button onclick="appendName()" class="btn-primary">Submit</button>
+        <input style="display: none;" type="text" id="fname" name="fname">
+        <div id="online-help1" style="display: none">Enter your desired name into this area.</div><br><br>
+
+
+        <button onclick="appendName()" class="btn-primary">Submit</button> 
+        <div id="online-help2" style="display: none">  Press it after you have entered your name to add your name to the queue.</div><br>
 
         <button onclick="removeFirstInQueue()" class="btn-primary">Delete</button>
+        <div id="online-help" style="display: none">  Press it to remove the first name in the queue</div> <br> 
      </form>
 
     </div>
 
 
-
+    <button onclick="onlineHelp()">Help</button> <button onclick="Done()" id="online-help4" style="display: none"> Done</button> <br>
     <button onclick="Driver()">Test</button>
     
 
     <div class="container">
+      <div id="online-help3" style="display: none">This is the queue. It shows you who is waiting</div>
      <h2>Queue</h2>
       <div class="card">
         <div class="card-body" id="queue-list">
@@ -52,6 +58,26 @@
 
       </div>
     </div>
+    <script type = "text/javascript">
+      function onlineHelp() {
+        document.getElementById("online-help").style.display = 'inline';
+        document.getElementById("online-help1").style.display = 'inline';
+        document.getElementById("online-help2").style.display = 'inline';
+        document.getElementById("online-help3").style.display = 'inline';
+        document.getElementById("online-help4").style.display = 'inline';
+        
+      }
+
+
+      function Done() {
+        document.getElementById("online-help").style.display = 'none';
+        document.getElementById("online-help1").style.display = 'none';
+        document.getElementById("online-help2").style.display = 'none';
+        document.getElementById("online-help3").style.display = 'none';
+        document.getElementById("online-help4").style.display = 'none';
+      }
+
+    </script>
 
     <script type ="text/javascript">
        /**
